@@ -26,8 +26,12 @@ def train(model, train_loader, device, optimizer):
 
     #         if batch % 100 == 0:
     #             print(f"Train Epoch: {epoch} [{batch * len(data)}/{len(train_loader.dataset)}({(100. * batch / len(train_loader)):.0f}%)] \tLoss: {loss.item():.6f}")
+    with open("results.txt", 'w') as outfile:
+        outfile.write("Training variance explained: %2.1f%%\n" % epoch)
+        outfile.write("Test variance explained: %2.1f%%\n" % loss.item())
 
     print(f"\n Train Epoch: {epoch} \tLoss: {loss.item():.6f}")
+
 
 
 train_set = torchvision.datasets.FashionMNIST('./data/FashionMNIST',
