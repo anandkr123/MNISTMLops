@@ -8,7 +8,7 @@ from model import Network
 
 # Hyper-parameters
 
-epochs = 14
+epochs = 2
 train_batch_size = 100
 
 
