@@ -11,7 +11,7 @@ import mlflow
 # Hyper-parameters
 
 epochs = 1
-train_batch_size = 100
+train_batch_size = 128
 
 
 def train(model, train_loader, device, optimizer):
