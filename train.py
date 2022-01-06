@@ -1,3 +1,5 @@
+import json
+
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
@@ -30,11 +32,10 @@ def train(model, train_loader, device, optimizer):
 
     #         if batch % 100 == 0:
     #             print(f"Train Epoch: {epoch} [{batch * len(data)}/{len(train_loader.dataset)}({(100. * batch / len(train_loader)):.0f}%)] \tLoss: {loss.item():.6f}")
-    with open("results.txt", 'w') as outfile:
-        outfile.write("Epoch: %2.1f%%\n" % epoch)
-        outfile.write("Train loss: %2.1f%%\n" % loss.item())
+    with open("results.json", 'w') as outfile:
+        json.dump({"Batch size": train_batch_size, "Loss": loss.item()}, outfile)
 
-    print(f"\n Train Epoch: {epoch} \tLoss: {loss.item():.6f}")
+    # print(f"\n Train Epoch: {epoch} \tLoss: {loss.item():.6f}")
 
 
 
