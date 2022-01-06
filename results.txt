@@ -1,0 +1,2 @@
+Epoch: 1.0%
+Train loss: 0.3%

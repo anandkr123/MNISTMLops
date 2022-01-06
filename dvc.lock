@@ -1,0 +1,12 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python train.py
+    deps:
+    - path: train.py
+      md5: 9168bb7d615336e3673662342b010424
+      size: 2032
+    outs:
+    - path: results.json
+      md5: 8ff2cbf9b39f63184c80ec219de51140
+      size: 48
